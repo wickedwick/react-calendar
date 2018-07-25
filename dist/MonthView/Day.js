@@ -31,7 +31,7 @@ function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in ob
 var className = 'react-calendar__month-view__days__day';
 var appendTodayClassNameIfNeeded = function appendTodayClassNameIfNeeded(date) {
   var today = new Date();
-  if ((0, _dates.getYear)(date) === today.getYear() && (0, _dates.getMonth)(date) === today.getMonth() && (0, _dates.getDay)(date) === today.getDate()) {
+  if (date.getYear() === today.getYear() && date.getMonth() === today.getMonth() && date.getDay() === today.getDate()) {
     return " today";
   }
   return "";

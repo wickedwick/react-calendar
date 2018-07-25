@@ -6,7 +6,7 @@
   "types": "./index.d.ts",
   "es6": "src/entry.js",
   "scripts": {
-    "build": "yarn run build-js && yarn run copy-styles && yarn run build-styles && yarn run copy-types",
+    "build": "npm run build-js && npm run copy-styles && npm run build-styles && npm run copy-types",
     "build-js": "babel src -d dist --ignore __tests__",
     "build-styles": "lessc ./dist/Calendar.less ./dist/Calendar.css",
     "copy-styles": "node ./copy-styles.js",

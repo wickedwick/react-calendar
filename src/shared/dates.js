@@ -24,6 +24,12 @@ export const getMonthIndex = date => date.getMonth();
 
 export const getDay = date => date.getDate();
 
+export const getTodayWithoutTime = () => {
+  let d = new Date();
+  d.setHours(0,0,0,0);
+  return d;
+};
+
 export const getDayOfWeek = (date, calendarType = 'ISO 8601') => {
   const weekday = date.getDay();
 

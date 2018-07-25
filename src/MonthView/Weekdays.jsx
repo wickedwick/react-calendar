@@ -50,7 +50,7 @@ export default class Weekdays extends Component {
 
       weekdays.push(
         <div
-          className="react-calendar__month-view__weekdays__weekday"
+          className="react-calendar__month-view__weekdays__weekday heading"
           key={weekday}
           style={{ flexGrow: 1 }}
         >

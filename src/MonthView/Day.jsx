@@ -9,10 +9,19 @@ import {
   getEndOfDay,
   getISOLocalDate,
   isWeekend,
+  getYear,
+  getMonth
 } from '../shared/dates';
 import { tileProps } from '../shared/propTypes';
 
 const className = 'react-calendar__month-view__days__day';
+const appendTodayClassNameIfNeeded = (date) => {
+  const today = new Date();
+  if(getYear(date) === today.getYear() && getMonth(date) === today.getMonth() && getDay(date) === today.getDate()) {
+    return " today";
+  }
+  return "";
+}
 
 const Day = ({
   classes,
@@ -24,9 +33,9 @@ const Day = ({
     {...otherProps}
     classes={[
       ...classes,
-      className,
+      className + appendTodayClassNameIfNeeded(date),
       isWeekend(date) ? `${className}--weekend` : null,
-      date.getMonth() !== currentMonthIndex ? `${className}--neighboringMonth` : null,
+      date.getMonth() !== currentMonthIndex ? `${className}--neighboringMonth not` : null,
     ]}
     date={date}
     dateTime={`${getISOLocalDate(date)}T00:00:00.000`}

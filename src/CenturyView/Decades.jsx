@@ -28,7 +28,7 @@ export default class Decades extends PureComponent {
     return (
       <TileGroup
         {...otherProps}
-        className="react-calendar__century-view__decades"
+        className="react-calendar__century-view__decades decades displayGrid"
         dateTransform={getBeginOfDecade}
         dateType="decade"
         end={this.end}

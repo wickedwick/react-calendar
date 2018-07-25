@@ -51,7 +51,7 @@ var Years = function (_PureComponent) {
           otherProps = _objectWithoutProperties(_props, ['activeStartDate']);
 
       return _react2.default.createElement(_TileGroup2.default, _extends({}, otherProps, {
-        className: 'react-calendar__decade-view__years',
+        className: 'react-calendar__decade-view__years years displayGrid',
         dateTransform: function dateTransform(year) {
           return new Date(year, 0, 1);
         },

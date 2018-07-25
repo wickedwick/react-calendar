@@ -75,7 +75,7 @@ export default class Days extends PureComponent {
     return (
       <TileGroup
         {...otherProps}
-        className="react-calendar__month-view__days"
+        className="react-calendar__month-view__days days displayGrid"
         count={7}
         dateTransform={day => new Date(this.year, monthIndex, day)}
         dateType="day"

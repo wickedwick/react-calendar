@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 exports.formatShortWeekday = exports.formatMonth = exports.formatMonthYear = exports.formatDate = undefined;
 
-var _locales = require('./locales');
+var _locales = require("./locales");
 
 var formatterCache = {};
 
@@ -14,23 +14,23 @@ var formatterCache = {};
  * just yet, it will be created on the fly.
  */
 var getFormatter = function getFormatter(options, locale) {
-  if (!locale) {
-    // Default parameter is not enough as it does not protect us from null values
-    // eslint-disable-next-line no-param-reassign
-    locale = (0, _locales.getDefaultLocale)();
-  }
+	if (!locale) {
+		// Default parameter is not enough as it does not protect us from null values
+		// eslint-disable-next-line no-param-reassign
+		locale = (0, _locales.getDefaultLocale)();
+	}
 
-  var stringifiedOptions = JSON.stringify(options);
+	var stringifiedOptions = JSON.stringify(options);
 
-  if (!formatterCache[locale]) {
-    formatterCache[locale] = {};
-  }
+	if (!formatterCache[locale]) {
+		formatterCache[locale] = {};
+	}
 
-  if (!formatterCache[locale][stringifiedOptions]) {
-    formatterCache[locale][stringifiedOptions] = new Intl.DateTimeFormat(locale, options).format;
-  }
+	if (!formatterCache[locale][stringifiedOptions]) {
+		formatterCache[locale][stringifiedOptions] = new Intl.DateTimeFormat(locale, options).format;
+	}
 
-  return formatterCache[locale][stringifiedOptions];
+	return formatterCache[locale][stringifiedOptions];
 };
 
 /**
@@ -43,22 +43,22 @@ var getFormatter = function getFormatter(options, locale) {
  * @param {Date} date Date.
  */
 var toSafeHour = function toSafeHour(date) {
-  var safeDate = new Date(date);
-  return new Date(safeDate.setHours(12));
+	var safeDate = new Date(date);
+	return new Date(safeDate.setHours(12));
 };
 
 var formatDate = exports.formatDate = function formatDate(date, locale) {
-  return getFormatter({ day: 'numeric', month: 'numeric', year: 'numeric' }, locale)(toSafeHour(date));
+	return getFormatter({ day: "numeric", month: "numeric", year: "numeric" }, locale)(toSafeHour(date));
 };
 
 var formatMonthYear = exports.formatMonthYear = function formatMonthYear(date, locale) {
-  return getFormatter({ month: 'long', year: 'numeric' }, locale)(toSafeHour(date));
+	return getFormatter({ month: "long", year: "numeric" }, locale)(toSafeHour(date));
 };
 
 var formatMonth = exports.formatMonth = function formatMonth(date, locale) {
-  return getFormatter({ month: 'long' }, locale)(toSafeHour(date));
+	return getFormatter({ month: "long" }, locale)(toSafeHour(date));
 };
 
 var formatShortWeekday = exports.formatShortWeekday = function formatShortWeekday(date, locale) {
-  return getFormatter({ weekday: 'short' }, locale)(toSafeHour(date));
+	return getFormatter({ weekday: "short" }, locale)(toSafeHour(date));
 };

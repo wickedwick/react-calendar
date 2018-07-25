@@ -65,7 +65,7 @@ var Months = function (_PureComponent) {
           otherProps = _objectWithoutProperties(_props, ['activeStartDate']);
 
       return _react2.default.createElement(_TileGroup2.default, _extends({}, otherProps, {
-        className: 'react-calendar__year-view__months',
+        className: 'react-calendar__year-view__months months displayGrid',
         dateTransform: function dateTransform(monthIndex) {
           return new Date(_this2.year, monthIndex, 1);
         },

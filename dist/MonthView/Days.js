@@ -61,7 +61,7 @@ var Days = function (_PureComponent) {
           otherProps = _objectWithoutProperties(_props, ['activeStartDate', 'calendarType', 'showNeighboringMonth']);
 
       return _react2.default.createElement(_TileGroup2.default, _extends({}, otherProps, {
-        className: 'react-calendar__month-view__days',
+        className: 'react-calendar__month-view__days days displayGrid',
         count: 7,
         dateTransform: function dateTransform(day) {
           return new Date(_this2.year, monthIndex, day);

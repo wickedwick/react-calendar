@@ -26,7 +26,7 @@ export default class Months extends PureComponent {
     return (
       <TileGroup
         {...otherProps}
-        className="react-calendar__year-view__months"
+        className="react-calendar__year-view__months months displayGrid"
         dateTransform={monthIndex => new Date(this.year, monthIndex, 1)}
         dateType="month"
         end={this.end}

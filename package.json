@@ -15,7 +15,9 @@
     "test": "yarn run test-eslint && yarn run test-jest",
     "test-eslint": "eslint ./src",
     "test-jest": "jest",
-    "test-jest-coverage": "jest --coverage"
+    "test-jest-coverage": "jest --coverage",
+    "pretty": "./node_modules/.bin/prettier --print-width 150 --tab-width 4 --write src/**/*.js --use-tabs",
+    "lint": "./node_modules/.bin/eslint src/** mappers/** --max-warnings=0"
   },
   "jest": {
     "setupFiles": [
@@ -88,6 +90,7 @@
     "jest": "^23.4.1",
     "jest-cli": "^23.4.1",
     "less": "^3.7.1",
+    "prettier": "^1.13.7",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-test-renderer": "^16.4.1"

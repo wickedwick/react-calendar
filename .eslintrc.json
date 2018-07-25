@@ -1,24 +1,47 @@
 {
-  "extends": "airbnb",
-  "env": {
-    "browser": true,
-    "es6": true,
-    "jest": true
-  },
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true
-    }
-  },
-  "rules": {
-    "function-paren-newline": "off",
-    "global-require": "off",
-    "jsx-a11y/label-has-for": ["error", { "required": { "some": ["id", "nesting"] }}],
-    "no-restricted-globals": "off",
-    "prefer-destructuring": "warn",
-    "prefer-spread": "warn",
-    "react/require-default-props": "off",
-    "react/sort-comp": "off"
-  }
+	"extends": [
+		"eslint:recommended",
+		"plugin:jest/recommended",
+		"plugin:react/recommended"
+	],
+  "plugins": [
+		"json",
+		"jest",
+		"react",
+		"lean-imports",
+		"import"
+	],
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"parser": "babel-eslint",
+	"env": {
+		"es6":     true,
+		"browser": true,
+		"node":    true,
+		"mocha":   true
+	},
+	"rules": {
+		"strict": 0,  
+		"no-console": ["error", { "allow": ["warn", "error","trace"] }],   
+		"react/prop-types": "off",
+		"no-trailing-spaces": "error",
+		"no-unused-vars": "error",
+		"no-alert": "warn",
+		"no-lone-blocks": "error",
+		"react/display-name": "off",
+		"no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+		"no-var": "error",
+		"lean-imports/import": ["error", []],
+		"import/first": "error",
+		"import/no-duplicates": "error",
+		"import/named": "error",
+		"import/default": "error",
+		"import/no-useless-path-segments": "error",
+		"import/newline-after-import": "error"
+		}
 }

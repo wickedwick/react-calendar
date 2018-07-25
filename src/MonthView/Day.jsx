@@ -17,7 +17,7 @@ import { tileProps } from '../shared/propTypes';
 const className = 'react-calendar__month-view__days__day';
 const appendTodayClassNameIfNeeded = (date) => {
   const today = new Date();
-  if(getYear(date) === today.getYear() && getMonth(date) === today.getMonth() && getDay(date) === today.getDate()) {
+  if(date.getYear() === today.getYear() && date.getMonth() === today.getMonth() && date.getDay() === today.getDate()) {
     return " today";
   }
   return "";
